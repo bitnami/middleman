@@ -23,7 +23,7 @@ if ENV['TEST'] || ENV['CONTRACTS'] == 'true'
       end
 
       def valid?(val)
-        (val.frozen? || val.nil?) && Contract.valid?(val, @contract)
+        (val.frozen? || val.nil? || val.is_a?(Fixnum)) && Contract.valid?(val, @contract)
       end
     end
 
@@ -58,6 +58,21 @@ if ENV['TEST'] || ENV['CONTRACTS'] == 'true'
         Set.new([], [Testable.test_data(@contract)], [Testable.test_data(@contract), Testable.test_data(@contract)])
       end
     end
+
+    # class MethodDefined
+    #   def self.[](val)
+    #     @lookup ||= {}
+    #     @lookup[val] ||= new(val)
+    #   end
+
+    #   def initialize(val)
+    #     @val = val
+    #   end
+
+    #   def valid?(val)
+    #     val.method_defined? @val
+    #   end
+    # end
 
     ResourceList = Contracts::ArrayOf[IsA['Middleman::Sitemap::Resource']]
   end
@@ -141,6 +156,9 @@ else
 
     class Frozen < Callable
     end
+
+    # class MethodDefined < Callable
+    # end
   end
 end
 
