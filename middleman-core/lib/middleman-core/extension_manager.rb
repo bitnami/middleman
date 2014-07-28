@@ -15,7 +15,7 @@ module Middleman
     end
 
     # Activate an extension, optionally passing in options.
-    # This method is typically used from a project's `config.rb`.
+    # This method is typically used from a project's `middleman.rb`.
     #
     # @example Activate an extension with no options
     #     activate :lorem

@@ -1,4 +1,4 @@
-Feature: Allow config.rb and extensions to add CLI commands
+Feature: Allow middleman.rb and extensions to add CLI commands
 
   Scenario: Command autoloaded from tasks/ directory
     Given an empty app

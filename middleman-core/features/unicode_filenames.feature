@@ -5,7 +5,7 @@ Feature: Unicode filenames
 
   Scenario: Build with files containing unicode characters in their name
     Given a fixture app "empty-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       """
     And a file named "source/snowmen-rule-☃.html" with:
@@ -21,7 +21,7 @@ Feature: Unicode filenames
 
   Scenario: Preview with files containing unicode characters in their name
     Given a fixture app "empty-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       """
     And a file named "source/snowmen-rule-☃.html" with:

@@ -1,7 +1,7 @@
 Feature: Ignoring paths
   Scenario: Ignore a single path (build)
     Given a fixture app "ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       ignore 'about.html.erb'
       ignore 'plain.html'
@@ -15,7 +15,7 @@ Feature: Ignoring paths
       
   Scenario: Ignore a single path (server)
     Given a fixture app "ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
        """
        ignore 'about.html.erb'
        ignore 'plain.html'
@@ -30,7 +30,7 @@ Feature: Ignoring paths
 
   Scenario: Ignore a globbed path (build)
     Given a fixture app "ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       ignore '*.erb'
       ignore 'reports/*'
@@ -50,7 +50,7 @@ Feature: Ignoring paths
       
   Scenario: Ignore a globbed path (server)
     Given a fixture app "ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       ignore '*.erb'
       ignore 'reports/*'
@@ -76,7 +76,7 @@ Feature: Ignoring paths
 
   Scenario: Ignore a regex (build)
     Given a fixture app "ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       ignore /^.*\.erb/
       ignore /^reports\/.*/
@@ -96,7 +96,7 @@ Feature: Ignoring paths
       
   Scenario: Ignore a regex (server)
     Given a fixture app "ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       ignore /^.*\.erb/
       ignore /^reports\/.*/

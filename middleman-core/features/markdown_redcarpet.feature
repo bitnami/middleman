@@ -4,7 +4,7 @@ Feature: Markdown (Redcarpet) support
 
   Scenario: Redcarpet 2 extensions
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       set :markdown, no_intra_emphasis: true,
@@ -39,7 +39,7 @@ Feature: Markdown (Redcarpet) support
 
   Scenario: Redcarpet 3 extensions
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       set :markdown, underline: true,
@@ -56,7 +56,7 @@ Feature: Markdown (Redcarpet) support
 
   Scenario: Redcarpet smartypants extension
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       set :markdown, smartypants: true
@@ -67,7 +67,7 @@ Feature: Markdown (Redcarpet) support
 
   Scenario: Redcarpet::Render::HTML options
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       set :markdown, filter_html: true,
@@ -100,7 +100,7 @@ Feature: Markdown (Redcarpet) support
 
   Scenario: Redcarpet link_attributes option
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       set :markdown, link_attributes: { target: "_blank" }
@@ -115,7 +115,7 @@ Feature: Markdown (Redcarpet) support
 
   Scenario: Redcarpet xhtml option
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       set :markdown, xhtml: true,
@@ -127,7 +127,7 @@ Feature: Markdown (Redcarpet) support
 
   Scenario: Redcarpet per-page frontmatter options
     Given a fixture app "markdown-frontmatter-options-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       set :markdown, smartypants: true
@@ -148,7 +148,7 @@ Feature: Markdown (Redcarpet) support
 
   Scenario: Redcarpet uses our link_to and image_tag helpers
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       activate :automatic_image_sizes

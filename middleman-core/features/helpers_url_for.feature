@@ -2,7 +2,7 @@ Feature: url_for helper
 
   Scenario: url_for produces relative links
     Given a fixture app "indexable-app"
-    And an empty file named "config.rb"
+    And an empty file named "middleman.rb"
     And a file named "source/url_for.html.erb" with:
     """
     absolute: <%= url_for "/needs_index.html", relative: true %>
@@ -23,7 +23,7 @@ Feature: url_for helper
 
   Scenario: url_for relative works with strip_index_file
     Given a fixture app "indexable-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     set :relative_links, true
     set :strip_index_file, true
@@ -57,7 +57,7 @@ Feature: url_for helper
 
   Scenario: url_for produces relative links when :relative_links is set to true
     Given a fixture app "indexable-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     set :relative_links, true
     """
@@ -113,7 +113,7 @@ Feature: url_for helper
 
   Scenario: Setting http_prefix
     Given a fixture app "indexable-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     set :http_prefix, "/foo"
     """

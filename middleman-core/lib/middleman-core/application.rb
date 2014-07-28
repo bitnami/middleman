@@ -255,11 +255,19 @@ module Middleman
     end
 
     def evaluate_configuration
-      # Check for and evaluate local configuration in `config.rb`
-      local_config = File.join(root, 'config.rb')
-      if File.exist? local_config
-        logger.debug '== Reading: Local config'
-        config_context.instance_eval File.read(local_config), local_config, 1
+      # Check for and evaluate local configuration in `middleman.rb`
+      middleman_rb = File.join(root, 'middleman.rb')
+      if File.exist? middleman_rb
+        logger.debug '== Reading: Local config: middleman.rb'
+        config_context.instance_eval File.read(middleman_rb), middleman_rb, 1
+      else
+        # Check for and evaluate local configuration in `config.rb`
+        config_rb = File.join(root, 'config.rb')
+        if File.exist? config_rb
+          logger.debug '== Warning: `config.rb` should now be named `middleman.rb`. Please rename it to silence this warning.'
+          logger.debug '== Reading: Local config: config.rb'
+          config_context.instance_eval File.read(config_rb), config_rb, 1
+        end
       end
 
       env_config = File.join(root, 'environments', "#{config[:environment]}.rb")

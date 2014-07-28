@@ -3,7 +3,7 @@ Feature: Markdown (Kramdown) support
 
   Scenario: Kramdown smartypants extension
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :kramdown
       set :markdown, smartypants: true
@@ -14,7 +14,7 @@ Feature: Markdown (Kramdown) support
 
   Scenario: Kramdown uses our link_to and image_tag helpers
     Given a fixture app "markdown-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :kramdown
       activate :automatic_image_sizes

@@ -11,7 +11,7 @@ module Middleman
       # Activate before the Sitemap is instantiated
       before_sitemap: Set.new,
 
-      # Activate the extension before `config.rb` and the `:before_configuration` hook.
+      # Activate the extension before `middleman.rb` and the `:before_configuration` hook.
       before_configuration: Set.new
     }
 
@@ -25,7 +25,7 @@ module Middleman
       attr_reader :registered
 
       # Register a new extension. Choose a name which will be
-      # used to activate the extension in `config.rb`, like this:
+      # used to activate the extension in `middleman.rb`, like this:
       #
       #     activate :my_extension
       #

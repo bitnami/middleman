@@ -2,7 +2,7 @@ Feature: form_tag helper
 
   Scenario: form_tag produces relative links
     Given a fixture app "indexable-app"
-    And an empty file named "config.rb"
+    And an empty file named "middleman.rb"
     And a file named "source/form_tag.html.erb" with:
     """
     absolute: <% form_tag "/needs_index.html#absolute", relative: true do %>

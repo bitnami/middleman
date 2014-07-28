@@ -3,7 +3,7 @@ Feature: Markdown support in Haml (Kramdown)
 
   Scenario: Markdown filter in Haml works (with Kramdown)
     Given a fixture app "markdown-in-haml-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :kramdown
       activate :directory_indexes
@@ -23,7 +23,7 @@ Feature: Markdown support in Haml (Kramdown)
 
   Scenario: Markdown filter in Haml uses our link_to and image_tag helpers (with Kramdown)
     Given a fixture app "markdown-in-haml-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :kramdown
       activate :directory_indexes

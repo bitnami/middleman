@@ -10,7 +10,7 @@ module Middleman::Cli
     desc 'init TARGET [options]', 'Create new project at TARGET'
     method_option 'template',
                   aliases: '-T',
-                  default: 'middleman/middleman-templates-default',
+                  default: 'middleman/middleman-templates-default#rename_config',
                   desc: 'Use a project template'
 
     # Do not run bundle install
@@ -25,7 +25,7 @@ module Middleman::Cli
     def init(target='.')
       require 'tmpdir'
 
-      repo = if shortname?(options[:template])
+      repo_path, repo_branch = if shortname?(options[:template])
         require 'open-uri'
         require 'json'
 
@@ -35,17 +35,21 @@ module Middleman::Cli
         begin
           data = ::JSON.parse(uri.read)
           data['links']['github']
+          data['links']['github'].split('#')
         rescue ::OpenURI::HTTPError
           puts "Template `#{options[:template]}` not found in Middleman Directory."
           puts 'Did you mean to use a full `user/repo` path?'
           exit
         end
       else
-        repository_path(options[:template])
+        repo_name, repo_branch = options[:template].split('#')
+        [repository_path(repo_name), repo_branch]
       end
 
       Dir.mktmpdir do |dir|
-        run("git clone #{repo} #{dir}")
+        cmd = repo_branch ? "clone -b #{repo_branch}" : "clone"
+
+        run("git #{cmd} #{repo_path} #{dir}")
 
         source_paths << dir
 

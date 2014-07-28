@@ -13,7 +13,7 @@ Feature: Built-in macro view helpers
 
   Scenario: Setting http_prefix
     Given a fixture app "padrino-helpers-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     set :http_prefix, "/foo"
     """

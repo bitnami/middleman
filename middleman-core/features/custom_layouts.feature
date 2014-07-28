@@ -3,7 +3,7 @@ Feature: Custom layouts
 
   Scenario: Using custom :layout attribute
     Given a fixture app "custom-layout-app2"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       page '/custom-layout.html', layout: :custom
       """
@@ -13,7 +13,7 @@ Feature: Custom layouts
 
   Scenario: Using custom :layout attribute with folders
     Given a fixture app "custom-layout-app2"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       page '/custom-layout-dir/', layout: :custom
       """
@@ -27,7 +27,7 @@ Feature: Custom layouts
 
   Scenario: Using custom :layout attribute with folders
     Given a fixture app "custom-layout-app2"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       page '/custom-layout-dir', layout: :custom
       """
@@ -41,7 +41,7 @@ Feature: Custom layouts
 
   Scenario: Using custom :layout attribute with folders
     Given a fixture app "custom-layout-app2"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       page '/custom-layout-dir/index.html', layout: :custom
       """

@@ -22,7 +22,7 @@ class Middleman::CoreExtensions::Internationalization < ::Middleman::Extension
                     ignore: proc { |f| !(/.*(rb|yml|yaml)$/.match(f[:relative_path])) }
 
     # Setup data files before anything else so they are available when
-    # parsing config.rb
+    # parsing middleman.rb
     app.files.changed(:locales, &method(:on_file_changed))
 
     @maps = {}

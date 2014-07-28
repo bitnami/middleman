@@ -113,7 +113,7 @@ module Middleman
     protected
 
     # Get a hash of configuration options for a given file extension, from
-    # config.rb
+    # middleman.rb
     #
     # @param [String] ext
     # @return [Hash]

@@ -4,7 +4,7 @@ Feature: Markdown support in Haml
 
   Scenario: Markdown filter in Haml works
     Given a fixture app "markdown-in-haml-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       activate :directory_indexes
@@ -24,7 +24,7 @@ Feature: Markdown support in Haml
 
   Scenario: Markdown filter in Haml uses our link_to and image_tag helpers
     Given a fixture app "markdown-in-haml-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       set :markdown_engine, :redcarpet
       activate :directory_indexes

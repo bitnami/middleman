@@ -13,7 +13,7 @@ Feature: Strip the index_file from urls
 
   Scenario: Trailing slash off
     Given a fixture app "strip-url-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
        """
        set :trailing_slash, false
        """
@@ -27,7 +27,7 @@ Feature: Strip the index_file from urls
 
   Scenario: Strip index off
     Given a fixture app "strip-url-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
        """
        set :strip_index_file, false
        """

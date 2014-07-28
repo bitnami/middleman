@@ -18,7 +18,7 @@ Feature: Support Rack apps mounted using map
 
   Scenario: Static Ruby Endpoints
     Given a fixture app "sinatra-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     endpoint "hello.html" do
       "world"
@@ -30,7 +30,7 @@ Feature: Support Rack apps mounted using map
 
   Scenario: Built Mounted Rack App at /sinatra (including rack endpoints)
     Given a fixture app "sinatra-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       require "sinatra"
 

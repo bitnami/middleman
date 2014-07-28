@@ -190,7 +190,7 @@ class Middleman::CoreExtensions::DefaultHelpers < ::Middleman::Extension
     #
     # config[:relative_links] = true
     #
-    # to config.rb to have all links default to relative.
+    # to middleman.rb to have all links default to relative.
     #
     # There is also a :query option that can be used to append a
     # query string, which can be expressed as either a String,

@@ -106,12 +106,12 @@ module Middleman
           ready do
             match_against = [
               %r{^config\.rb$},
+              %r{^middleman\.rb$},
               %r{^environments/[^\.](.*)\.rb$},
               %r{^lib/[^\.](.*)\.rb$},
               %r{^#{@app.config[:helpers_dir]}/[^\.](.*)\.rb$}
             ]
 
-            # config.rb
             files.watch :reload,
                         path: root,
                         ignored: proc { |file|

@@ -35,12 +35,12 @@ Feature: Local Data API
     When I go to "/data3.html"
     Then I should see "No Test Data"
 
-  Scenario: Using data in config.rb
+  Scenario: Using data in middleman.rb
     Given the Server is running at "data-app"
     When I go to "/test1.html"
     Then I should see "Welcome"
 
-  Scenario: Using data2 in config.rb
+  Scenario: Using data2 in middleman.rb
     Given the Server is running at "data-app"
     When I go to "/test2.html"
     Then I should see "Welcome"

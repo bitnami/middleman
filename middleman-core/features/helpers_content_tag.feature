@@ -2,7 +2,7 @@ Feature: content_tag helper
 
   Scenario: content_tag doesn't escape content from either block or string
     Given a fixture app "empty-app"
-    And an empty file named "config.rb"
+    And an empty file named "middleman.rb"
     And a file named "source/index.html.erb" with:
     """
     <%= content_tag :div, "<hello>world</hello>", class: 'one' %>

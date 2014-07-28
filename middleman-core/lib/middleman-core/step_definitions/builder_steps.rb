@@ -6,8 +6,8 @@ end
 
 Given /^app "([^\"]*)" is using config "([^\"]*)"$/ do |path, config_name|
   target = File.join(PROJECT_ROOT_PATH, 'fixtures', path)
-  config_path = File.join(current_dir, "config-#{config_name}.rb")
-  config_dest = File.join(current_dir, 'config.rb')
+  config_path = File.join(current_dir, "middleman-#{config_name}.rb")
+  config_dest = File.join(current_dir, 'middleman.rb')
   FileUtils.cp(config_path, config_dest)
 end
 

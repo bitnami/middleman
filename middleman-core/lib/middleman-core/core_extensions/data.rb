@@ -5,7 +5,7 @@ require 'middleman-core/contracts'
 module Middleman
   module CoreExtensions
     # The data extension parses YAML and JSON files in the `data/` directory
-    # and makes them available to `config.rb`, templates and extensions
+    # and makes them available to `middleman.rb`, templates and extensions
     class Data < Extension
       attr_reader :data_store
 
@@ -31,7 +31,7 @@ module Middleman
                                    ignore: proc { |f| !DATA_FILE_MATCHER.match(f[:relative_path]) }
 
         # Setup data files before anything else so they are available when
-        # parsing config.rb
+        # parsing middleman.rb
         app.files.changed(:data, &@data_store.method(:update_files))
       end
 

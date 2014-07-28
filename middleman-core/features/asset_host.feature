@@ -3,7 +3,7 @@ Feature: Alternate between multiple asset hosts
   
   Scenario: Set single host globally
     Given a fixture app "asset-host-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :asset_host, host: "http://assets1.example.com"
       """
@@ -15,7 +15,7 @@ Feature: Alternate between multiple asset hosts
 
   Scenario: Set single host with inline-option
     Given a fixture app "asset-host-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :asset_host, host: "http://assets1.example.com"
       """
@@ -29,7 +29,7 @@ Feature: Alternate between multiple asset hosts
 
   Scenario: Set proc host with inline-option
     Given a fixture app "asset-host-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :asset_host, host: Proc.new { |asset|
         "http://assets%d.example.com" % (asset.hash % 4)

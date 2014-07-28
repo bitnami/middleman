@@ -2,7 +2,7 @@ Feature: CSS and Javascripts which are minify shouldn't be re-minified
 
   Scenario: JS files containing ".min" should not be re-compressed
     Given an empty app
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :minify_javascript
       """
@@ -25,7 +25,7 @@ Feature: CSS and Javascripts which are minify shouldn't be re-minified
     
   Scenario: CSS files containing ".min" should not be re-compressed
     Given an empty app
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :minify_css
       """

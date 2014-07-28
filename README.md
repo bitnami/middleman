@@ -31,7 +31,7 @@ Once Middleman is installed, you will have access to the `middleman` command. Fi
 middleman init MY_PROJECT
 ```
 
-This will create a new Middleman project located in the "MY_PROJECT" directory. This project contains a `config.rb` file for configuring Middleman and a `source` directory for storing your pages, stylesheets, javascripts and images.
+This will create a new Middleman project located in the "MY_PROJECT" directory. This project contains a `middleman.rb` file for configuring Middleman and a `source` directory for storing your pages, stylesheets, javascripts and images.
 
 Change directories into your new project and start the preview server:
 
@@ -52,7 +52,7 @@ Finally, you will want to build your project into a stand-alone site. From the p
 middleman build
 ```
 
-This will compile your templates and output a stand-alone site which can be easily hosted or delivered to your client. The build step can also compress images, employ Javascript & CSS dependency management, minify Javascript & CSS and run additional code of your choice. Take a look at the `config.rb` file to see some of the most common extensions which can be activated.
+This will compile your templates and output a stand-alone site which can be easily hosted or delivered to your client. The build step can also compress images, employ Javascript & CSS dependency management, minify Javascript & CSS and run additional code of your choice. Take a look at the `middleman.rb` file to see some of the most common extensions which can be activated.
 
 ## Learn More
 

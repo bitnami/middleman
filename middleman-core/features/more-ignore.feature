@@ -1,7 +1,7 @@
 Feature: Ignoring paths
   Scenario: Ignore with directory indexes (source file, build)
     Given a fixture app "more-ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :directory_indexes
       ignore 'about.html.erb'
@@ -16,7 +16,7 @@ Feature: Ignoring paths
     
   Scenario: Ignore with directory indexes (source file, server)
     Given a fixture app "more-ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :directory_indexes
       ignore 'about.html.erb'
@@ -32,7 +32,7 @@ Feature: Ignoring paths
   
   Scenario: Ignore with directory indexes (output path splat, build)
     Given a fixture app "more-ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :directory_indexes
       ignore 'about*'
@@ -47,7 +47,7 @@ Feature: Ignoring paths
     
   Scenario: Ignore with directory indexes (output path splat, server)
     Given a fixture app "more-ignore-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :directory_indexes
       ignore 'about*'

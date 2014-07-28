@@ -2,7 +2,7 @@ Feature: Meta redirects
 
   Scenario: Redirect to unknown file
     Given a fixture app "large-build-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     redirect "hello.html", to: "world.html"
     """
@@ -12,7 +12,7 @@ Feature: Meta redirects
 
   Scenario: Redirect to external site
     Given a fixture app "large-build-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     redirect "hello.html", to: "http://example.com"
     """
@@ -22,7 +22,7 @@ Feature: Meta redirects
 
   Scenario: Redirect to a resource
     Given a fixture app "large-build-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     ready do
       r = sitemap.find_resource_by_path("static.html")
@@ -35,7 +35,7 @@ Feature: Meta redirects
 
   Scenario: Redirect to a path with directory index
     Given a fixture app "large-build-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     activate :directory_indexes
     redirect "hello.html", to: "link_test.html"
@@ -49,7 +49,7 @@ Feature: Meta redirects
 
   Scenario: Redirect with custom html
     Given a fixture app "large-build-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     redirect "hello.html", to: "world.html" do |from, to|
       "#{from} to #{to}"

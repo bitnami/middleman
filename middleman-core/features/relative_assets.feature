@@ -10,7 +10,7 @@ Feature: Relative Assets
 
   Scenario: Building css with the feature disabled
     Given a fixture app "relative-assets-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       """
     Given a successfully built app at "relative-assets-app"
@@ -33,7 +33,7 @@ Feature: Relative Assets
 
   Scenario: Building css with the feature enabled
     Given a fixture app "relative-assets-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :relative_assets
       """
@@ -44,7 +44,7 @@ Feature: Relative Assets
 
   Scenario: Relative css reference with directory indexes
     Given a fixture app "relative-assets-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :directory_indexes
       activate :relative_assets
@@ -75,7 +75,7 @@ Feature: Relative Assets
 
   Scenario: Building scss with the feature enabled
     Given a fixture app "fonts-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :relative_assets
       """

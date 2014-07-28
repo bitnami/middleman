@@ -201,12 +201,12 @@ module Middleman
 
     # @!method before_configuration
     #   Respond to the `before_configuration` event.
-    #   If a `before_configuration` method is implemented, that method will be run before `config.rb` is run.
-    #   @note Because most extensions are activated from within `config.rb`, they *will not run* any `before_configuration` hook.
+    #   If a `before_configuration` method is implemented, that method will be run before `middleman.rb` is run.
+    #   @note Because most extensions are activated from within `middleman.rb`, they *will not run* any `before_configuration` hook.
 
     # @!method after_configuration
     #   Respond to the `after_configuration` event.
-    #   If an `after_configuration` method is implemented, that method will be run before `config.rb` is run.
+    #   If an `after_configuration` method is implemented, that method will be run before `middleman.rb` is run.
 
     # @!method before_build
     #   Respond to the `before_build` event.

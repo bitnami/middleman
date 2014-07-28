@@ -94,7 +94,7 @@ Feature: Assets get a file hash appended to their and references to them are upd
 
   Scenario: The asset hash should change when a Rack-based filter changes
     Given a fixture app "asset-hash-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :asset_hash
       activate :relative_assets
@@ -113,7 +113,7 @@ Feature: Assets get a file hash appended to their and references to them are upd
 
   Scenario: Hashed-asset files are not produced for ignored paths
     Given a fixture app "asset-hash-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       is_stylesheet = proc { |path| path.start_with? 'stylesheets' }
       activate :asset_hash, ignore: [

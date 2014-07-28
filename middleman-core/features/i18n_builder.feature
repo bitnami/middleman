@@ -3,7 +3,7 @@ Feature: i18n Builder
 
   Scenario: Running localize with the default config
     Given a fixture app "i18n-test-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :i18n
       """
@@ -47,7 +47,7 @@ Feature: i18n Builder
 
   Scenario: Running localize with the alt path config
     Given a fixture app "i18n-test-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :i18n, path: "/lang_:locale/"
       """
@@ -67,7 +67,7 @@ Feature: i18n Builder
 
   Scenario: Running localize with the alt root config
     Given a fixture app "i18n-alt-root-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :i18n, templates_dir: "lang_data"
       """
@@ -87,7 +87,7 @@ Feature: i18n Builder
 
   Scenario: Running localize with the lang map config
     Given a fixture app "i18n-test-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :i18n, lang_map: { en: :english, es: :spanish }
       """
@@ -107,7 +107,7 @@ Feature: i18n Builder
 
   Scenario: Running localize with the no mount config
     Given a fixture app "i18n-test-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :i18n, mount_at_root: false
       """
@@ -128,7 +128,7 @@ Feature: i18n Builder
 
   Scenario: Running localize with the subset config
     Given a fixture app "i18n-test-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :i18n, langs: [:en]
       """
@@ -146,7 +146,7 @@ Feature: i18n Builder
 
   Scenario: Running localize with relative_assets
     Given a fixture app "i18n-test-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :i18n
       activate :relative_assets

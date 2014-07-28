@@ -3,7 +3,7 @@ Feature: Minify CSS
 
   Scenario: Rendering external css with the feature disabled
     Given a fixture app "minify-css-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       """
     And the Server is running at "minify-css-app"
@@ -13,7 +13,7 @@ Feature: Minify CSS
     
   Scenario: Rendering external css with the feature enabled
     Given a fixture app "minify-css-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :minify_css
       """
@@ -28,7 +28,7 @@ Feature: Minify CSS
     
   Scenario: Rendering external css with passthrough compressor
     Given a fixture app "passthrough-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       module ::PassThrough
         def self.compress(data)
@@ -44,7 +44,7 @@ Feature: Minify CSS
 
   Scenario: Rendering inline css with the feature disabled
     Given a fixture app "minify-css-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       """
     And the Server is running at "minify-css-app"
@@ -61,7 +61,7 @@ Feature: Minify CSS
    
   Scenario: Rendering inline css with a passthrough minifier
     Given a fixture app "passthrough-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       module ::PassThrough
         def self.compress(data)
@@ -86,7 +86,7 @@ Feature: Minify CSS
 
   Scenario: Rendering inline css with a passthrough minifier using activate-style compressor
     Given a fixture app "passthrough-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       module ::HelloCompressor
         def self.compress(data)
@@ -109,7 +109,7 @@ Feature: Minify CSS
     
   Scenario: Rendering inline css with the feature enabled
     Given a fixture app "minify-css-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :minify_css, inline: true
       """

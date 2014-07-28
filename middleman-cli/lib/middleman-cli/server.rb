@@ -52,7 +52,7 @@ module Middleman::Cli
       require 'middleman-core/preview_server'
 
       unless ENV['MM_ROOT']
-        puts '== Could not find a Middleman project config.rb'
+        puts '== Could not find a Middleman project config file: middleman.rb'
         exit
       end
 

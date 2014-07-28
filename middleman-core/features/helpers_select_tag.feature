@@ -2,7 +2,7 @@ Feature: select_tag helper
 
   Scenario: select_tag produces correct options
     Given a fixture app "indexable-app"
-    And an empty file named "config.rb"
+    And an empty file named "middleman.rb"
     And a file named "source/select_tag.html.erb" with:
     """
     options as array: <%= select_tag :colors, options: ["red", "blue", "blorange"], include_blank: "Choose a color" %>

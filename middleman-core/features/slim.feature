@@ -3,7 +3,7 @@ Feature: Support slim templating language
 
   Scenario: Rendering Slim
     Given an empty app
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       """
     And a file named "source/slim.html.slim" with:

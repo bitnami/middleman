@@ -20,7 +20,7 @@ Feature: GZIP assets during build
 
   Scenario: Only specified extensions should be gzipped
     Given a fixture app "gzip-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :gzip, exts: %w(.js .html .htm)
       """
@@ -36,7 +36,7 @@ Feature: GZIP assets during build
 
   Scenario: Gzipped files are not produced for ignored paths
     Given a fixture app "gzip-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :gzip, ignore: ['index.html', %r(javascripts/.*)]
       """

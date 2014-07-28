@@ -1,7 +1,7 @@
 Feature: Layouts dir
   Scenario: Find layouts in a custom layouts dir
     Given a fixture app "layouts-dir-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     set :layouts_dir, 'layouts2'
     """
@@ -11,7 +11,7 @@ Feature: Layouts dir
 
   Scenario: Find layouts in a nested custom layouts dir
     Given a fixture app "layouts-dir-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     set :layouts_dir, 'nested/layouts2'
     """
@@ -21,7 +21,7 @@ Feature: Layouts dir
 
   Scenario: Find layouts in the default layouts dir
     Given a fixture app "layouts-dir-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     """
     And the Server is running
@@ -30,7 +30,7 @@ Feature: Layouts dir
 
   Scenario: Prefer a layout in the layouts_dir to one with the same name in the root
     Given a fixture app "layouts-dir-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
     """
     """
     And the Server is running

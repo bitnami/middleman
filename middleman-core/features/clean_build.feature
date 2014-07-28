@@ -18,7 +18,7 @@ Feature: Build Clean
 
   Scenario: Clean build an app with newly ignored files and a nested output directory
     Given a fixture app "clean-nested-app"
-    When a file named "config.rb" with:
+    When a file named "middleman.rb" with:
       """
       set :build_dir, "sub/dir"
       """
@@ -30,7 +30,7 @@ Feature: Build Clean
     Then the following files should exist:
       | sub/dir/about.html         |
       | sub/dir/nested/nested.html |
-    When a file named "config.rb" with:
+    When a file named "middleman.rb" with:
       """
       set :build_dir, "sub/dir"
       ignore 'about.html'

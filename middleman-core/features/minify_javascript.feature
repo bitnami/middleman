@@ -3,7 +3,7 @@ Feature: Minify Javascript
 
   Scenario: Rendering inline js with the feature disabled
     Given a fixture app "minify-js-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       """
     And the Server is running at "minify-js-app"
@@ -41,7 +41,7 @@ Feature: Minify Javascript
     
   Scenario: Rendering inline js with a passthrough minifier
     Given a fixture app "passthrough-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       module ::PassThrough
         def self.compress(data)
@@ -88,7 +88,7 @@ Feature: Minify Javascript
 
   Scenario: Rendering inline css with a passthrough minifier using activate-style compressor
     Given a fixture app "passthrough-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       module ::HelloCompressor
         def self.compress(data)
@@ -122,7 +122,7 @@ Feature: Minify Javascript
     
   Scenario: Rendering inline js with the feature enabled
     Given a fixture app "minify-js-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :minify_javascript, inline: true
       """
@@ -148,7 +148,7 @@ Feature: Minify Javascript
     
   Scenario: Rendering external js with the feature enabled
     Given a fixture app "minify-js-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :minify_javascript
       """
@@ -165,7 +165,7 @@ Feature: Minify Javascript
 
   Scenario: Rendering inline js (coffeescript) with the feature enabled
     Given a fixture app "minify-js-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :minify_javascript, inline: true
       """
@@ -175,7 +175,7 @@ Feature: Minify Javascript
   
   Scenario: Rendering external js (coffeescript) with the feature enabled
     Given a fixture app "minify-js-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       activate :minify_javascript
       """
@@ -185,7 +185,7 @@ Feature: Minify Javascript
     
   Scenario: Rendering inline js (coffeescript) with a passthrough minifier
     Given a fixture app "passthrough-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       module ::PassThrough
         def self.compress(data)
@@ -203,7 +203,7 @@ Feature: Minify Javascript
     
   Scenario: Rendering external js (coffeescript) with a passthrough minifier
     Given a fixture app "passthrough-app"
-    And a file named "config.rb" with:
+    And a file named "middleman.rb" with:
       """
       module ::PassThrough
         def self.compress(data)
